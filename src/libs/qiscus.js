@@ -9,7 +9,7 @@ import TopicAdapter from './adapters/topic';
 
 class qiscus {
   constructor () {
-    let config    = { baseURL: envConfig.baseURL, token: store.get('qcData').token || null };
+    let config    = { baseURL: envConfig.baseURL, token: (store.get('qcData')) ? store.get('qcData').token : null };
     this.config   = config;
     this.rooms    = [],
     this.selected = { room: null, topic: null }
